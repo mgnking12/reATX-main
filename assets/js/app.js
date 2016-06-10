@@ -43,8 +43,8 @@ $(document).ready(function() {
 
 
     $("body").on('click', '.binButton', function(event) {
+    	 initMap();
         event.preventDefault();
-        initMap();
         console.log("bins")
         $("#contributeSection").attr("data-sec", "bin");
         $("#signUpSection").attr("data-sec", "bin");
@@ -94,7 +94,7 @@ $(document).ready(function() {
              n();
                 });
     });
-    $("body").on('click', '.xbuttonIcon', function(event) {
+    $("body").on('click', '.xbi', function(event) {
     	 event.preventDefault();
     	 $("#sideBarComments").removeClass("hoverable");
     	$(".xbuttonIcon").css('display', 'none');
