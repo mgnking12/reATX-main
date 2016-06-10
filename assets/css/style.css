@@ -5,7 +5,9 @@
  *
  * Made By MaterializeCSS.com
  */
-
+body{
+  position: relative;
+}
 nav ul a,
 nav .brand-logo {
   color: #444;
@@ -40,15 +42,32 @@ p {
   height: 400px;
   display: none;
 }
-html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
       #map {
-        height: 100%;
+        height: 400px;
         width: 100%;
+        position: absolute;
+        overflow: scroll;
       }
+      #sideBarComments{
+        height: 50px;
+        width: 50px;
+        margin-top: 300px;
+        background-color: #2980b9;
+        z-index:1;
+  position: absolute;
+      }
+.bbuttonIcon{
+  color: white;
+}
+.xbuttonIcon{
+  color: white;
+  display: none;
+  margin-top: 15px;
+}
+.popout{
+  display: none;
+  width: 100%;
+}
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
     position: absolute;

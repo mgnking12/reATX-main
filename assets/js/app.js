@@ -3,6 +3,8 @@
 
 
   $(document).ready(function(){
+
+
 function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
@@ -29,12 +31,16 @@ function initMap() {
           handleLocationError(false, infoWindow, map.getCenter());
         }
       }
+
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
+      
       }
+
+
 $("body").on('click', '.binButton', function(event) {
 	event.preventDefault();
 	initMap();
@@ -64,6 +70,27 @@ $("body").on('click', '.binButton', function(event) {
 			n();
 		});
 	}
+	//$("#binSection").append("<div class='col s1' id='sideBarComments'>")
+});
+$("body").on('click', '#sideBarComments', function(event) {
+	event.preventDefault();
+	$("#sideBarComments").animate({
+		marginTop: '0%',
+		//marginLeft: '-30%',
+            width: '40%',
+            height: '400px',
+            borderRadius: '0%',
+            backgroundColor: '#2980b9',
+             backgroundColor:'rgba(41, 128, 185, 0.6)',
+        }, 1000);
+	$( "#sideBarComments" ).removeClass( "valign-wrapper push-s9 push-m11 hoverable" );
+	$("#sideBarComments").addClass('push-s7');
+	$(".bbuttonIcon").css('display', 'none');
+	$(".xbuttonIcon").css('display', 'inline-block');
+	$(".popout").css({
+		display: 'block',
+		opacity: '1'
+	});
 });
 $("body").on('click', '.contributeButton', function(event) {
 	event.preventDefault();
