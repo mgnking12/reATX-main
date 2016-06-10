@@ -181,6 +181,22 @@ $(document).ready(function() {
         $("#binSection").css('display', 'none');
         $("#signUpSection").css('display', 'none');
         $("#contributeSection").css('display', 'none');
+    	$("#sideBarComments").removeClass("hoverable");
+    	$(".xbuttonIcon").css('display', 'none');
+    	$(".popout").css('display', 'none');
+        $("#sideBarComments").animate({
+        	marginLeft: '0',
+        	height: '50px',
+	        width: '50px',
+	        marginTop: '300px',
+	        backgroundColor: '#2980b9',
+	        borderRadius: '50%',
+        }, 1000).delay(0)
+                .queue(function(n) {                 
+        $("#sideBarComments").addClass("valign-wrapper hoverable");
+        $(".bbuttonIcon").css('display', 'inline-block');
+                    n();
+                });
     });
 
 
