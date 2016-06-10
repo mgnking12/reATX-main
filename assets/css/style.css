@@ -36,10 +36,9 @@ p {
   background-color:rgba(255, 255, 255, 0.8);
   margin-top: 50px;
 }
-#binSection, #contributeSction, #signUpSection{
+#binSection, #contributeSection, #signUpSection{
   height: 400px;
   display: none;
-  background-color: #ccc;
 }
 
 @media only screen and (max-width : 992px) {
