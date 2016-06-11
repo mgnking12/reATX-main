@@ -7,6 +7,10 @@
  */
 body{
   position: relative;
+  min-height: 100%;
+}
+.all{
+  min-height: 400px;
 }
 nav ul a,
 nav .brand-logo {
@@ -42,18 +46,18 @@ p {
   height: 400px;
   display: none;
 }
-      #map {
-        height: 400px;
-        width: 100%;
-        position: absolute;
-        overflow: scroll;
+#map {
+  height: 400px;
+  width: 100%;
+  position: absolute;
+  overflow: scroll;
       }
-      #sideBarComments{
-        height: 50px;
-        width: 50px;
-        margin-top: 300px;
-        background-color: #2980b9;
-        z-index:1;
+#sideBarComments{
+  height: 50px;
+  width: 50px;
+  margin-top: 300px;
+  background-color: #2980b9;
+  z-index:1;
   position: absolute;
       }
 .bbuttonIcon{
