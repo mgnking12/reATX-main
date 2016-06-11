@@ -12,12 +12,7 @@
         placeMarker(event.latLng);
         });
 
-        function placeMarker(location) {
-            var marker = new google.maps.Marker({
-                position: location, 
-                map: map
-            });
-        }
+        
 
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
@@ -46,4 +41,10 @@
                               'Error: Your browser doesn\'t support geolocation.');
       }
 });
-     
+
+function placeMarker(location) {
+            var marker = new google.maps.Marker({
+                position: location, 
+                map: map
+            });
+        }

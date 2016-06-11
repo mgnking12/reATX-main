@@ -33,6 +33,13 @@ $(document).ready(function() {
         }
     }
 
+    function placeMarker(location) {
+            var marker = new google.maps.Marker({
+                position: location, 
+                map: map
+            });
+        }
+
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
@@ -73,6 +80,40 @@ $(document).ready(function() {
         }
         //$("#binSection").append("<div class='col s1' id='sideBarComments'>")
     });
+    //Contribute Page
+    $("body").on('click', '.contributeButton', function(event) {
+        initMap();
+        placeMarker();
+        event.preventDefault();
+        console.log("bins")
+        $("#contributeSection").attr("data-sec", "bin");
+        $("#signUpSection").attr("data-sec", "bin");
+        $("#index-banner").attr("data-sec", "bin");
+        if ($("#binSection").attr("data-sec") == "signUp") {
+            $("#signUpSection").hide("slide", 2000)
+                .delay(0)
+                .queue(function(n) {
+                    $("#binSection").fadeIn(0);
+                    n();
+                });
+        } else if ($("#binSection").attr("data-sec") == "contribute") {
+            $("#contributeSection").hide("slide", 2000)
+                .delay(0)
+                .queue(function(n) {
+                    $("#binSection").fadeIn(0);
+                    n();
+                });
+        } else if ($("#binSection").attr("data-sec") == "index-banner") {
+            $("#index-banner").hide("slide", 2000)
+                .delay(0)
+                .queue(function(n) {
+                    $("#binSection").fadeIn(0);
+                    n();
+                });
+        }
+        //$("#binSection").append("<div class='col s1' id='sideBarComments'>")
+    });
+
     $("body").on('click', '.bbuttonIcon', function(event) {
         event.preventDefault();
         $("#sideBarComments").removeClass("hoverable");
