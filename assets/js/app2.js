@@ -3,6 +3,7 @@ var conSec = '<div class="fluid-container" id="contributeSection" data-sec="inde
 var signUpSec = ' <div class="fluid-container binHide" id="signUpSection" data-sec="index-banner"><div class="section"><div class="row"><div class="col s12 center"><h3><i class="mdi-content-send brown-text"></i></h3><h4>Sign Up</h4><p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p></div></div></div><div class="parallax-container valign-wrapper"><div class="section no-pad-bot"><div class="container"><div class="row center"></div></div></div><div class="parallax"><img src="assets/img/background3.jpg" alt="Unsplashed background img 3"></div></div></div>';
 var pU = '<div class="row popupBins"><div  id="sideBarComments" class="col s12 push-s9 push-m11 hoverable circle valign-wrapper right"><div class="xbuttonIcon"><i class="fa fa-times fa-2x xbi"></i></div><i class="material-icons small valign bbuttonIcon">view_list</i><ul class="collapsible popout" data-collapsible="accordion"><li><div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div><div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div></li><li><div class="collapsible-header"><i class="material-icons">place</i>Second</div><div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div></li><li><div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div><div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div></li></ul></div></div>';
 var hPage = '<div id="index-banner" class="parallax-container binHide"><div class="section no-pad-bot"> <div class="container white-bg"> <br><br><h1 class="header center green-text text-darken-2">re<i class="fa fa-recycle" aria-hidden="true"></i>USTIN<div class="row center"><h5 class="header col s12 green-text light text-darken-2">r e d u c e  .  r e u s e  .  r e c y c l e</h5></div></h1><div class="row center"><a href="#" class="btn-large waves-effect waves-light green binButton">Search for Bins</a></div><br><br></div></div><div class="parallax"><img src="assets/img/background1.jpg" alt="Unsplashed background img 1"></div></div>';
+
 $(document).ready(function() {
 
     var data = new Firebase("https://reaustin.firebaseio.com/");
@@ -91,12 +92,35 @@ $(document).ready(function() {
             "<option value='privateBin'>Private Bin</option>" +
             "</select> </td></tr>" +
             "<tr><td class='iw-subTitle'>Additional Comments:</td> <td><input type='text' id='comments'/> </td></tr>" +
-            "<tr><td><input type='button' value='Save & Close' onclick='saveData()'/></td></tr>" + "<div class='iw-bottom-gradient'></div></table></div>" ;
+            "<tr><td><input type='button' value='Save-&-Close' id='submit'/></td></tr>" + "<div class='iw-bottom-gradient'></div></table></div>" ;
 
         infowindow = new google.maps.InfoWindow({
             content: html,
         });
+            google.maps.event.addListener(map, 'click', function(event) {
+            marker = new google.maps.Marker({
+                position: event.latLng, 
+                map: map
+            });
+            google.maps.event.addListener(marker, "click", function() {
+                infowindow.open(map, marker);
+                $("body").on('click', '#submit', function(){
+                    var name = $("#name").val();
+                    var binType = $("#binType").val();
+                    var comments = $("#comments").val();
+                    var position = {lat: marker.position.lat(), lng:marker.position.lng()};
+                    data.push({
+                        userName: name,
+                        binType: binType,
+                        comments: comments,
+                        position: position
+                    })
 
+                    infowindow.close();
+
+                });
+            });
+        });
 
 
         //===================table style=====================
@@ -173,16 +197,31 @@ $(document).ready(function() {
             });
         });
 
-        google.maps.event.addDomListener(window, 'load', initContributeMap);
-    }
+        //google.maps.event.addDomListener(window, 'load', initContributeMap);
+    
 
 
     //======================================================================
+data.on("child_added", function(snapshot) {
+            // Get latitude and longitude from the cloud.
+            var newPosition = snapshot.val().position;
 
+            // Create a google.maps.LatLng object for the position of the marker.
+            // A LatLng object literal (as above) could be used, but the heatmap
+            // in the next step requires a google.maps.LatLng object.
+            var latLng = new google.maps.LatLng(newPosition.lat, newPosition.lng);
+            
+            // Place a marker at that location.
+            var marker = new google.maps.Marker({
+            position: latLng,
+            map: map
+            });
+        });
+}
     //Function to pull up table for the marker
 
 
-    function saveData() {
+    /*function saveData() {
         var name = $("#name").val().trim();
         var type = $("#type").val().trim();
         var latlng = marker.getPosition();
@@ -193,7 +232,7 @@ $(document).ready(function() {
             position: latlng,
             dateAdded: Firebase.ServerValue.TIMESTAMP
         });
-    }
+    }*/
 
 
     //============================================================================
