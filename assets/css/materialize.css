@@ -2870,15 +2870,11 @@ video.responsive-video {
 }
 
 .parallax img {
-  display: none;
   position: absolute;
   left: 50%;
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
 

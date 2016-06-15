@@ -23,6 +23,10 @@ p {
 #index-banner{
 
 }
+.parallax img{
+  display: inline-block;
+  margin-bottom: -150px;
+}
 .button-collapse {
   color: #27ae60;
 }
@@ -44,6 +48,8 @@ p {
 }
 #binSection, #contributeSection, #signUpSection{
   height: 400px;
+}
+.popupBins{
   display: none;
 }
 #map {
@@ -52,6 +58,8 @@ p {
   position: absolute;
   overflow: scroll;
       }
+#map-popup{
+}
 #sideBarComments{
   height: 50px;
   width: 50px;
@@ -72,6 +80,68 @@ p {
   display: none;
   width: 100%;
 }
+
+#map {
+  margin: 0;
+  padding: 0;
+  height: 400px;
+  max-width: none;
+}
+#map img {
+  max-width: none !important;
+}
+.gm-style-iw {
+  width: 300px !important;
+  top: 15px !important;
+  left: 0px !important;
+  background-color: #fff;
+  box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
+  border: 1px solid rgba(72, 181, 233, 0.6);
+  border-radius: 2px 2px 10px 10px;
+}
+#iw-container {
+  margin-bottom: 10px;
+}
+#iw-container .iw-title {
+  position: absolute;
+  font-size: 18px;
+  font-weight: 300;
+  width: 100%;
+  padding: 5px;
+  background-color: #2ecc71;
+  color: white;
+  margin-top: -10px;
+  border-radius: 2px 2px 0 0;
+}
+#iw-container .iw-content {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  margin: 10px;
+  width: 95%;
+  max-height: 140px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.iw-subTitle {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0;
+}
+.iw-bottom-gradient {
+  position: absolute;
+  width: 326px;
+  height: 25px;
+  bottom: 0px;
+  right: 18px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+  background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+}
+
+
+
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
     position: absolute;
