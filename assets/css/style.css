@@ -10,7 +10,7 @@ body{
   min-height: 100%;
 }
 .all{
-  min-height: 400px;
+  min-height: 80vh;
 }
 nav ul a,
 nav .brand-logo {
@@ -32,7 +32,7 @@ p {
 }
 
 .parallax-container {
-  min-height: 400px;
+  min-height: 80vh;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
@@ -47,13 +47,13 @@ p {
   margin-top: 50px;
 }
 #binSection, #contributeSection, #signUpSection{
-  height: 400px;
+  height: 80vh;
 }
 .popupBins{
   display: none;
 }
 #map {
-  height: 400px;
+  height: 80vh;
   width: 100%;
   position: absolute;
   overflow: scroll;
@@ -84,7 +84,7 @@ p {
 #map {
   margin: 0;
   padding: 0;
-  height: 400px;
+  height: 80vh;
   max-width: none;
 }
 #map img {
