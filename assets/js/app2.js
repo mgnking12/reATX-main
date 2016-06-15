@@ -247,7 +247,7 @@ data.on("child_added", function(snapshot) {
     $("body").on('click', '.binButton', function(event) {
         event.preventDefault();
         $(".all").hide(800, function() {
-            $(".all").html(binSec).show(200, function() {
+            $(".all").html(binSec).show(0, function() {
                 initBinMap();
             });;
 
@@ -304,7 +304,7 @@ data.on("child_added", function(snapshot) {
     $("body").on('click', '.contributeButton', function(event) {
         event.preventDefault();
         $(".all").hide(800, function() {
-            $(".all").html(conSec).show(200, function() {
+            $(".all").html(conSec).show(0, function() {
                 initContributeMap();
             });;
         });
@@ -316,7 +316,7 @@ data.on("child_added", function(snapshot) {
     $("body").on('click', '.signUpButton', function(event) {
         event.preventDefault();
         $(".all").hide(800, function() {
-            $(".all").html(signUpSec).show(200, function() {});;
+            $(".all").html(signUpSec).show(0, function() {});;
         });
     });
 
@@ -324,7 +324,7 @@ data.on("child_added", function(snapshot) {
     $("body").on('click', '#logo-container', function(event) {
         event.preventDefault();
         $(".all").hide(800, function() {
-            $(".all").html(hPage).show(200, function() {});;
+            $(".all").html(hPage).show(0, function() {});;
         });
     });
 
