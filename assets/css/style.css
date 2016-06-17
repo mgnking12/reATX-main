@@ -10,7 +10,7 @@ body{
   min-height: 100%;
 }
 .all{
-  min-height: 80vh;
+  min-height: 60vh;
 }
 nav ul a,
 nav .brand-logo {
@@ -32,7 +32,7 @@ p {
 }
 
 .parallax-container {
-  min-height: 80vh;
+  min-height: 60vh;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
@@ -46,14 +46,14 @@ p {
   background-color:rgba(255, 255, 255, 0.8);
   margin-top: 50px;
 }
-#binSection, #contributeSection, #signUpSection{
-  height: 80vh;
+#binSection, #contributeSection, #abtUsSection{
+  height: 60vh;
 }
 .popupBins{
   display: none;
 }
 #map {
-  height: 80vh;
+  height: 60vh;
   width: 100%;
   position: absolute;
   overflow: scroll;
@@ -84,49 +84,44 @@ p {
 #map {
   margin: 0;
   padding: 0;
-  height: 80vh;
+  height: 60vh;
   max-width: none;
 }
 #map img {
   max-width: none !important;
 }
 .gm-style-iw {
-  width: 300px !important;
-  top: 15px !important;
-  left: 0px !important;
-  background-color: #fff;
-  box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
-  border: 1px solid rgba(72, 181, 233, 0.6);
-  border-radius: 2px 2px 10px 10px;
+ top: 0px !important;
+  left: 1px !important;
 }
 #iw-container {
+  height: 100%;
   margin-bottom: 10px;
+  min-width: 300px !important;
 }
 #iw-container .iw-title {
-  position: absolute;
   font-size: 18px;
   font-weight: 300;
   width: 100%;
-  padding: 5px;
-  background-color: #2ecc71;
-  color: white;
-  margin-top: -10px;
-  border-radius: 2px 2px 0 0;
+  padding: 0px;
+ color: #27ae60;
+  text-align: center;
+
 }
 #iw-container .iw-content {
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
-  margin: 10px;
+  margin-left: 10px;
   width: 95%;
-  max-height: 140px;
+  min-height: 100px;
   overflow-y: auto;
   overflow-x: hidden;
 }
 .iw-subTitle {
   font-size: 16px;
   font-weight: 500;
-  padding: 0;
+  margin-bottom: -20px;
 }
 .iw-bottom-gradient {
   position: absolute;
@@ -168,3 +163,5 @@ p {
 footer.page-footer {
   margin: 0;
 }
+
+.gmnoprint {display:none !important}
