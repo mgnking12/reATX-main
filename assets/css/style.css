@@ -46,15 +46,7 @@ p {
   background-color:rgba(255, 255, 255, 0.8);
   margin-top: 50px;
 }
-<<<<<<< HEAD
 #binSection, #contributeSection, #abtUsSection{
-=======
-<<<<<<< HEAD
-#binSection, #contributeSection, #abtUsSection{
-=======
-#binSection, #contributeSection, #signUpSection{
->>>>>>> f322305375a764abd112d07dbcb7de8dd0e41b6e
->>>>>>> c2a68783c275ae86fcfddafc614229ce3a72ed06
   height: 60vh;
 }
 .popupBins{
