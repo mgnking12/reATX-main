@@ -1,9 +1,9 @@
 var binSec = '<div class="fluid-container" id="binSection" data-sec="index-banner"><div id="map"></div>';
 var conSec = '<div class="fluid-container" id="contributeSection" data-sec="index-banner"><div id="map"></div></div>';
 var signUpSec = ' <div class="fluid-container binHide" id="signUpSection" data-sec="index-banner"><div class="section"><div class="row"><div class="col s12 center"><h3><i class="mdi-content-send brown-text"></i></h3><h4>Sign Up</h4><p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p></div></div></div><div class="parallax-container valign-wrapper"><div class="section no-pad-bot"><div class="container"><div class="row center"></div></div></div></div></div>';
-var pU = '<div class="row popupBins"><div  id="sideBarComments" class="col s12 push-s9 push-m11 hoverable circle valign-wrapper right"><div class="xbuttonIcon"><i class="fa fa-times fa-2x xbi"></i></div><i class="material-icons small valign bbuttonIcon">view_list</i><ul class="collapsible popout" data-collapsible="accordion"><li><div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div><div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div></li><li><div class="collapsible-header"><i class="material-icons">place</i>Second</div><div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div></li><li><div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div><div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div></li></ul></div></div>';
+//var pU = '<div class="row popupBins"><div  id="sideBarComments" class="col s12 push-s9 push-m11 hoverable circle valign-wrapper right"><div class="xbuttonIcon"><i class="fa fa-times fa-2x xbi"></i></div><i class="material-icons small valign bbuttonIcon">view_list</i></div></div>';
 var hPage = '<div id="index-banner" class="parallax-container binHide"><div class="section no-pad-bot"> <div class="container white-bg"> <br><br><h1 class="header center green-text text-darken-2">re<i class="fa fa-recycle" aria-hidden="true"></i>USTIN<div class="row center"><h5 class="header col s12 green-text light text-darken-2">r e d u c e  .  r e u s e  .  r e c y c l e</h5></div></h1><div class="row center"><a href="#" class="btn-large waves-effect waves-light green binButton">Search for Bins</a></div><br><br></div></div><div class="parallax"><img src="assets/img/background1.jpg" alt="Unsplashed background img 1"></div></div>';
-
+//var extraButtons = '<div class="extraDiv" id="userBin"></div><div class="extraDiv" id="cityBin"></div>'
 $(document).ready(function() {
 
     var data = new Firebase("https://reaustin.firebaseio.com/");
@@ -248,6 +248,7 @@ data.on("child_added", function(snapshot) {
         event.preventDefault();
         $(".all").hide(800, function() {
             $(".all").html(binSec).show(0, function() {
+              //  $("#binSection").append(pU);
                 initBinMap();
             });;
 
@@ -255,26 +256,15 @@ data.on("child_added", function(snapshot) {
     });
 
 
-    $("body").on('click', '.bbuttonIcon', function(event) {
+   /* $("body").on('mouseover', '.bbuttonIcon', function(event) {
         event.preventDefault();
-        $("#sideBarComments").removeClass("hoverable");
-        $(".bbuttonIcon").css('display', 'none');
-        $("#sideBarComments").animate({
-            marginTop: '0%',
-            marginLeft: '-30%',
-            width: '35%',
-            height: '400px',
-            borderRadius: '0%',
-            backgroundColor: '#2980b9',
-            backgroundColor: 'rgba(41, 128, 185, 0.6)',
-        }, 1000).delay(0)
-            .queue(function(n) {
-                $("#sideBarComments").removeClass("valign-wrapper hoverable");
+        $(".popupBins").append(extraButtons);
 
-                $(".xbuttonIcon").css('display', 'inline-block');
-                $(".popout").css('display', 'inline-block');
-                n();
-            });
+    });
+    $("body").on('mouseleave', '.bbuttonIcon', function(event) {
+        event.preventDefault();
+        $(".extraDiv").css('display', 'none');;
+
     });
     $("body").on('click', '.xbi', function(event) {
         event.preventDefault();
@@ -298,7 +288,7 @@ data.on("child_added", function(snapshot) {
     $("body").on('mouseover', '.xbuttonIcon', function(event) {
         $("#sideBarComments").addClass("hoverable");
     });
-
+*/
     //=========================contributeSection====================
 
     $("body").on('click', '.contributeButton', function(event) {
