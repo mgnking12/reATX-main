@@ -49,6 +49,9 @@ p {
 #binSection, #contributeSection, #abtUsSection{
   height: 60vh;
 }
+#abtUsSection{
+  color: #27ae60;
+}
 .popupBins{
   display: none;
 }
