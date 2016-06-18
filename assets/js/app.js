@@ -220,15 +220,20 @@ $(document).ready(function() {
                         lat: marker.position.lat(),
                         lng: marker.position.lng()
                     };
-                    data.push({
-                        userName: name,
-                        binType: binType,
-                        comments: comments,
-                        position: position
-                    })
 
-                    infowindow.close();
-
+                        if(name.length === 0 && comments.length === 0){
+                            alert("Please enter information!"); 
+                        } else{
+                            console.log("data is written");
+                            data.push({
+                                userName: name,
+                                binType: binType,
+                                comments: comments,
+                                position: position
+                            })
+                            infowindow.close();
+                    }
+                  
                 });
             });
         });
