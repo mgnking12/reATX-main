@@ -18,8 +18,8 @@ $(document).ready(function() {
         $("head").append(s);
         var map = new google.maps.Map(document.getElementById('map'), {
             center: {
-                lat: -34.397,
-                lng: 150.644
+                lat: 30.2669444, 
+                lng: -97.7427778
             },
             zoom: 17
         });
@@ -126,8 +126,8 @@ $(document).ready(function() {
         var marker;
         var map = new google.maps.Map(document.getElementById('map'), {
             center: {
-                lat: -34.397,
-                lng: 150.644
+                lat: 30.2669444, 
+                lng: -97.7427778
             },
             zoom: 17
         });
