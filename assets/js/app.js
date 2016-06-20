@@ -18,7 +18,7 @@ $(document).ready(function() {
         $("head").append(s);
         var map = new google.maps.Map(document.getElementById('map'), {
             center: {
-                lat: 30.2669444, 
+                lat: 30.2669444,
                 lng: -97.7427778
             },
             zoom: 17
@@ -64,13 +64,18 @@ $(document).ready(function() {
                         lng: parseFloat(longitude)
                     };
 
-                    var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+    
 
                     var marker = new google.maps.Marker({
                         position: myLatLng,
                         map: map,
-                        title: bizName,
-                        icon: image
+                        icon: {
+                            anchor: new google.maps.Point(16, 16),
+                            url: 'data:image/svg+xml;utf-8, \
+                            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.29 53.26"><defs><style>.cls-1{fill:#2250d1;}</style></defs><title>gmMARKERblue-01</title><polygon class="cls-1" points="4.04 27.15 16.64 53.26 29.23 27.15 4.04 27.15"/> \
+                            <path class="cls-1" d="M16.64,0A16.64,16.64,0,1,0,33.29,16.64,16.64,16.64,0,0,0,16.64,0ZM16.46,24.77l-6.71-.14L6.49,18.72l1.72-2.9-1-.69,4.08,0.16,1.94,3.53-1.08-.58-0.72,1.57L16.57,20Zm0.2-14L14,15.19,9.87,12.86l3.36-5.71H20L21.7,10l1.11-.44-2.11,3.64h-4l1-.86Zm6.85,13.59-3.37.06,0,1.25-2-3.55,2-3.51,0.08,1.22,1.71-.22-2.52-4.53,4.07-2.39,3.41,5.78Z"/> \
+                            </svg>'
+                        }
                     });
                 }
                 initMap(longitude, latitude);
@@ -91,7 +96,14 @@ $(document).ready(function() {
             // Place a marker at that location.
             var marker = new google.maps.Marker({
                 position: latLng,
-                map: map
+                map: map,
+                icon: {
+                    anchor: new google.maps.Point(16, 16),
+                    url: 'data:image/svg+xml;utf-8, \
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.29 53.26"><defs><style>.cls-1{fill:#24ce24;}</style></defs><title>gmMARKERgreen</title><polygon class="cls-1" points="4.04 27.15 16.64 53.26 29.23 27.15 4.04 27.15"/> \
+                        <path class="cls-1" d="M16.64,0A16.64,16.64,0,1,0,33.29,16.64,16.64,16.64,0,0,0,16.64,0ZM16.46,24.77l-6.71-.14L6.49,18.72l1.72-2.9-1-.69,4.08,0.16,1.94,3.53-1.08-.58-0.72,1.57L16.57,20Zm0.2-14L14,15.19,9.87,12.86l3.36-5.71H20L21.7,10l1.11-.44-2.11,3.64h-4l1-.86Zm6.85,13.59-3.37.06,0,1.25-2-3.55,2-3.51,0.08,1.22,1.71-.22-2.52-4.53,4.07-2.39,3.41,5.78Z"/> \
+                        </svg>'
+                }
             });
 
             var name = snapshot.val().userName;
@@ -126,7 +138,7 @@ $(document).ready(function() {
         var marker;
         var map = new google.maps.Map(document.getElementById('map'), {
             center: {
-                lat: 30.2669444, 
+                lat: 30.2669444,
                 lng: -97.7427778
             },
             zoom: 17
@@ -171,14 +183,16 @@ $(document).ready(function() {
                         lng: parseFloat(longitude)
                     };
 
-
-                    var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
-
                     var marker = new google.maps.Marker({
                         position: myLatLng,
                         map: map,
-                        title: bizName,
-                        icon: image
+                        icon: {
+                            anchor: new google.maps.Point(16, 16),
+                            url: 'data:image/svg+xml;utf-8, \
+                            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.29 53.26"><defs><style>.cls-1{fill:#2250d1;}</style></defs><title>gmMARKERblue-01</title><polygon class="cls-1" points="4.04 27.15 16.64 53.26 29.23 27.15 4.04 27.15"/> \
+                            <path class="cls-1" d="M16.64,0A16.64,16.64,0,1,0,33.29,16.64,16.64,16.64,0,0,0,16.64,0ZM16.46,24.77l-6.71-.14L6.49,18.72l1.72-2.9-1-.69,4.08,0.16,1.94,3.53-1.08-.58-0.72,1.57L16.57,20Zm0.2-14L14,15.19,9.87,12.86l3.36-5.71H20L21.7,10l1.11-.44-2.11,3.64h-4l1-.86Zm6.85,13.59-3.37.06,0,1.25-2-3.55,2-3.51,0.08,1.22,1.71-.22-2.52-4.53,4.07-2.39,3.41,5.78Z"/> \
+                            </svg>'
+                        }
                     });
                 }
                 initMap(longitude, latitude);
@@ -221,19 +235,19 @@ $(document).ready(function() {
                         lng: marker.position.lng()
                     };
 
-                        if(name.length === 0 && comments.length === 0){
-                            alert("Please enter information!"); 
-                        } else{
-                            console.log("data is written");
-                            data.push({
-                                userName: name,
-                                binType: binType,
-                                comments: comments,
-                                position: position
-                            })
-                            infowindow.close();
+                    if (name.length === 0 && comments.length === 0) {
+                        alert("Please enter information!");
+                    } else {
+                        console.log("data is written");
+                        data.push({
+                            userName: name,
+                            binType: binType,
+                            comments: comments,
+                            position: position
+                        })
+                        infowindow.close();
                     }
-                  
+
                 });
             });
         });
@@ -252,7 +266,14 @@ $(document).ready(function() {
             // Place a marker at that location.
             var marker = new google.maps.Marker({
                 position: latLng,
-                map: map
+                map: map,
+                icon: {
+                  anchor: new google.maps.Point(16, 16),
+                  url: 'data:image/svg+xml;utf-8, \
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.29 53.26"><defs><style>.cls-1{fill:#24ce24;}</style></defs><title>gmMARKERgreen</title><polygon class="cls-1" points="4.04 27.15 16.64 53.26 29.23 27.15 4.04 27.15"/> \
+                        <path class="cls-1" d="M16.64,0A16.64,16.64,0,1,0,33.29,16.64,16.64,16.64,0,0,0,16.64,0ZM16.46,24.77l-6.71-.14L6.49,18.72l1.72-2.9-1-.69,4.08,0.16,1.94,3.53-1.08-.58-0.72,1.57L16.57,20Zm0.2-14L14,15.19,9.87,12.86l3.36-5.71H20L21.7,10l1.11-.44-2.11,3.64h-4l1-.86Zm6.85,13.59-3.37.06,0,1.25-2-3.55,2-3.51,0.08,1.22,1.71-.22-2.52-4.53,4.07-2.39,3.41,5.78Z"/> \
+                        </svg>'
+                    }
             });
 
             var name = snapshot.val().userName;
@@ -281,7 +302,15 @@ $(document).ready(function() {
 
         });
 
+
     }
+
+
+
+
+
+
+
 
     //============================================================================
 

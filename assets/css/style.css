@@ -52,6 +52,10 @@ p {
 #abtUsSection{
   color: #27ae60;
 }
+.Layer_1{
+  width: 5px;
+
+}
 .popupBins{
   display: none;
 }
