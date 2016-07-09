@@ -1,0 +1,174 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+body{
+  position: relative;
+  min-height: 100%;
+}
+.all{
+  min-height: 60vh;
+}
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+p {
+  line-height: 2rem;
+}
+#index-banner{
+
+}
+.parallax img{
+  display: inline-block;
+  margin-bottom: -150px;
+}
+.button-collapse {
+  color: #27ae60;
+}
+
+.parallax-container {
+  min-height: 60vh;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+.white-bg{
+  height: 200px;
+  width: 350px;
+  background-color:rgba(255, 255, 255, 0.8);
+  margin-top: 50px;
+}
+#binSection, #contributeSection, #abtUsSection{
+  height: 60vh;
+}
+#abtUsSection{
+  color: #27ae60;
+}
+.Layer_1{
+  width: 5px;
+
+}
+.popupBins{
+  display: none;
+}
+#map {
+  height: 60vh;
+  width: 100%;
+  position: absolute;
+  overflow: scroll;
+      }
+#map-popup{
+}
+#sideBarComments{
+  height: 50px;
+  width: 50px;
+  margin-top: 300px;
+  background-color: #2980b9;
+  z-index:1;
+  position: absolute;
+      }
+.bbuttonIcon{
+  color: white;
+}
+.xbuttonIcon{
+  color: white;
+  display: none;
+  margin-top: 15px;
+}
+.popout{
+  display: none;
+  width: 100%;
+}
+
+#map {
+  margin: 0;
+  padding: 0;
+  height: 60vh;
+  max-width: none;
+}
+#map img {
+  max-width: none !important;
+}
+.gm-style-iw {
+ top: 0px !important;
+  left: 1px !important;
+}
+#iw-container {
+  height: 100%;
+  margin-bottom: 10px;
+  min-width: 300px !important;
+}
+#iw-container .iw-title {
+  font-size: 18px;
+  font-weight: 300;
+  width: 100%;
+  padding: 0px;
+ color: #27ae60;
+  text-align: center;
+
+}
+#iw-container .iw-content {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  margin-left: 10px;
+  width: 95%;
+  min-height: 100px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.iw-subTitle {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: -20px;
+}
+.iw-bottom-gradient {
+  position: absolute;
+  width: 326px;
+  height: 25px;
+  bottom: 0px;
+  right: 18px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+  background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+}
+
+
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+.gmnoprint {display:none !important}
