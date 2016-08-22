@@ -12,7 +12,23 @@
   <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
 </head>
 <body>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '268246293548653',
+        xfbml      : true,
+        version    : 'v2.7'
+      });
+    };
 
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">re<i class="fa fa-recycle" aria-hidden="true"></i>USTIN</a>
