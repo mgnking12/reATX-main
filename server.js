@@ -14,10 +14,9 @@ app.use(session({secret: '1234'}));
 
 require('./config/passport')(app);
 
-app.set('views', './src/views');
+app.set('views', './views');
 
 app.set('view engine', 'ejs');
-
 
 app.get('/', function(req,res){
 	
