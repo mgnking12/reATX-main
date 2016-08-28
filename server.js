@@ -19,11 +19,6 @@ app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
 
-app.use('/profile', profileRouter);
-app.use('/pets', petRouter);
-app.use('/admin', adminRouter);
-app.use('/auth', authRouter);
-
 app.get('/', function(req,res){
 	
 });
